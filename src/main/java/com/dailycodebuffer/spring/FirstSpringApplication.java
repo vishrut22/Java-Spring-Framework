@@ -1,6 +1,8 @@
 package com.dailycodebuffer.spring;
 
+import com.dailycodebuffer.spring.model.Employee;
 import com.dailycodebuffer.spring.model.Organization;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class FirstSpringApplication {
@@ -18,6 +20,6 @@ public class FirstSpringApplication {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        System.out.println(annotationContext.getBean("employeeWithByTypeAndName"));
     }
 }
