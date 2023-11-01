@@ -11,7 +11,12 @@ public class LooselyCoupledSpringApplication {
         // main call is not dependent on what importer is getting used they just need importer service
         // which help for import as per current applicaton.
         // the simpler part is spring is taking care of managing object.
-        ImporterService importerService = context.getBean(ImporterService.class);
+        // Since we have defined on for csv importer service as primary this will inject that bean and provide object.
+        var importerService = context.getBean(ImporterService.class);
         importerService.importAll();
+
+        // Once we ask for particular type of json bean which also uses qualifier to inject importer bean in service.
+        var jsonImporterService = (ImporterService)context.getBean("jsonImporterService");
+        jsonImporterService.importAll();
     }
 }
