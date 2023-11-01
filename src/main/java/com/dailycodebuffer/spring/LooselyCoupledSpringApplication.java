@@ -21,5 +21,8 @@ public class LooselyCoupledSpringApplication {
         var dependencyByMethodImporterService = context.getBean(DependencyByMethodImporterService.class);
         dependencyByMethodImporterService.importAll();
 
+        // Lets add one more time and see how json exporter is behaving
+        var dependencyByMethodImporterService2 = context.getBean(DependencyByMethodImporterService.class);
+        dependencyByMethodImporterService2.importAll();
     }
 }
