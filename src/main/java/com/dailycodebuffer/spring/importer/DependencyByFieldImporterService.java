@@ -11,6 +11,9 @@ public class DependencyByFieldImporterService {
     @Autowired
     private BaseImporter baseImporter; // We are injecting using do wiring at field level
 
+    public DependencyByFieldImporterService() {
+        System.out.println("DependencyByFieldImporterService init.");
+    }
     public void importAll() {
         System.out.println("Importing file using importer : "+ baseImporter);
         baseImporter.getHeaders();

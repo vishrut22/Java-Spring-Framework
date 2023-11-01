@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Primary
 public class CSVImporter implements  BaseImporter {
+    public CSVImporter() {
+        System.out.println("CSVImporter init.");
+    }
     public void importFile() {
         System.out.println("importing CSV file.");
     }
