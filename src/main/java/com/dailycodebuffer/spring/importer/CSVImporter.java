@@ -1,6 +1,6 @@
 package com.dailycodebuffer.spring.importer;
 
-public class CSVImporter {
+public class CSVImporter implements  BaseImporter {
     public void importFile() {
         System.out.println("importing CSV file.");
     }

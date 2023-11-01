@@ -1,14 +1,14 @@
 package com.dailycodebuffer.spring.importer;
 
 public class ImporterService {
-    private CSVImporter csvImporter;
-    public ImporterService(CSVImporter csvImporter) {
-        this.csvImporter = csvImporter;
+    private BaseImporter baseImporter;
+    public ImporterService(BaseImporter baseImporter) {
+        this.baseImporter = baseImporter;
     }
 
     public void importAll() {
-        System.out.println("Importing file using importer : "+ csvImporter);
-        csvImporter.getHeaders();
-        csvImporter.importFile();
+        System.out.println("Importing file using importer : "+ baseImporter);
+        baseImporter.getHeaders();
+        baseImporter.importFile();
     }
 }

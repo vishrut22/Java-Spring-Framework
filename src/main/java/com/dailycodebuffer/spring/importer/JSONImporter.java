@@ -1,6 +1,6 @@
 package com.dailycodebuffer.spring.importer;
 
-public class JSONImporter {
+public class JSONImporter  implements BaseImporter{
     public void importFile() {
         System.out.println("importing JSON file.");
     }
