@@ -1,19 +1,17 @@
 package com.dailycodebuffer.spring.importer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-// Now everything is business class
-// Lets tell spring to create beans for us.
 @Component
-public class ImporterService {
-    // DI - It means importer service is dependent on baseImporter
-    // Which base importer to use that can be decided by spring Application
+public class DependencyByMethodImporterService {
 
-    private BaseImporter baseImporter;
+    private BaseImporter baseImporter; // We are injecting using do wiring at setter method level and also notice we did similar thing for qualifier
 
     @Autowired
-    public ImporterService(BaseImporter baseImporter) {
+    @Qualifier("jsonImporter")
+    public void setBaseImporter(BaseImporter baseImporter) {
         this.baseImporter = baseImporter;
     }
 
