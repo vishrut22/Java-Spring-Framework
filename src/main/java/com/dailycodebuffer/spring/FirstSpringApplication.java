@@ -13,7 +13,8 @@ public class FirstSpringApplication {
         System.out.println(annotationContext.getBean("employeeNumber"));
         // defined custom name
         System.out.println(annotationContext.getBean("employeeObj"));
-        //by type example
+        //by type example --- This also now throws exception so we need to define bean name rather type or Primary
+        // notice that it used primary bean in this get bean
         System.out.println(annotationContext.getBean(Organization.class));
         try {
             System.out.println(annotationContext.getBean("employee")); // bean not found example
@@ -21,5 +22,6 @@ public class FirstSpringApplication {
             e.printStackTrace();
         }
         System.out.println(annotationContext.getBean("employeeWithByTypeAndName"));
+        System.out.println(annotationContext.getBean("employeeWithoutDefiningQualifier"));
     }
 }
