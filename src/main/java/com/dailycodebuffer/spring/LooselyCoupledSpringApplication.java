@@ -24,5 +24,7 @@ public class LooselyCoupledSpringApplication {
         // Lets add one more time and see how json exporter is behaving
         var dependencyByMethodImporterService2 = context.getBean(DependencyByMethodImporterService.class);
         dependencyByMethodImporterService2.importAll();
+        context.close(); // We need this when we are working with non-web application in case of web application server takes care of it and fires the pre destroy method.
+
     }
 }
